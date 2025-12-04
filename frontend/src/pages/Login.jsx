@@ -12,7 +12,8 @@ export default function Login({ onLoggedIn }) {
     setErr('');
     try {
       await login(email, password);
-      onLoggedIn();
+      // call onLoggedIn only if provided (optional) to avoid throwing when undefined
+      if (typeof onLoggedIn === 'function') onLoggedIn();
     } catch (e) {
       setErr(e?.response?.data?.error || 'Login failed');
     }

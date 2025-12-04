@@ -4,6 +4,7 @@ import authRoutes from './routes/auth.js';
 import tenantRoutes from './routes/tenants.js';
 import adminRoutes from './routes/admin.js';
 import eventsRoutes from './routes/events.js';
+import retellRoutes from './routes/retell.js';
 
 const app = express();
 // app.use(cors());
@@ -25,6 +26,7 @@ app.use('/auth', authRoutes);
 app.use('/events', eventsRoutes);
 app.use('/tenant', tenantRoutes);
 app.use('/admin', adminRoutes);
+app.use('/retell', retellRoutes);
 
 app.post('/healthz', (req, res) => res.json({ ok: true }));
 

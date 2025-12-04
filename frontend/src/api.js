@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://unexonerative-merilyn-emulatively.ngrok-free.dev';
+// Default to local backend during development. Override with VITE_API_URL in production or env.
+const API_BASE = import.meta.env.NEXT_PUBLIC_API_URL || 'https://unexonerative-merilyn-emulatively.ngrok-free.dev';
 
 export const api = axios.create({
   baseURL: API_BASE,
